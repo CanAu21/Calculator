@@ -1,0 +1,47 @@
+//calculator
+//variables (let -> immutable, var -> mutable)
+//operators
+//async method
+//if conditions
+
+//canister => smart contrat
+
+actor _calculator {
+  var _cell : Int = 0;
+
+  //addition
+  //function
+  public func addition(n : Int) : async Int {
+    _cell += n;
+    _cell
+    //Debug.print(debug_show (_cell));
+  };
+
+  //subtraction
+  public func subtraction(n : Int) : async Int {
+    _cell -= n;
+    _cell;
+  };
+
+  //multiplication
+  public func multiplication(n : Int) : async Int {
+    _cell *= n;
+    _cell;
+  };
+
+  //division
+  public func division(n : Int) : async ?Int {
+    if (n == 0) {
+      null;
+    } else {
+      _cell /= n;
+      ?_cell;
+    };
+
+  };
+
+  //clean
+  public func clean() : async () {
+    _cell := 0;
+  };
+};
